@@ -44,7 +44,7 @@ const Hearder = () => {
 
 
   return (
-    <header className='sticky top-0 z-50 border-b border-canopy-dark/40 bg-canopy/95 py-2 shadow-soft backdrop-blur supports-[backdrop-filter]:bg-canopy/90'>
+    <header className='sticky top-0 z-50 border-b border-canopy-dark/40 bg-canopy/95 py-2 shadow-soft backdrop-blur supports-[backdrop-filter]:bg-canopy/90 '>
       <nav className='mx-2 flex flex-col items-center gap-2 sm:mx-4 sm:flex-row sm:justify-between'>
         <div className='flex items-center justify-center sm:justify-start'>
           <Link to='/'>

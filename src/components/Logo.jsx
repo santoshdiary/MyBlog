@@ -3,7 +3,7 @@ import React from 'react'
 const Logo = ({width}) => {
   return (
     <div>
-      <img src="../public/logo.png" alt="" width={width}  className='rounded-b-lg' />
+      <img src="/logo.png" alt="Logo" width={width} className='rounded-b-lg' />
     </div>
   )
 }
