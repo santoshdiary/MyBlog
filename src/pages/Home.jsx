@@ -34,17 +34,17 @@ function Home() {
 
                             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
 
-                                <div className="rounded-xl border border-gray-200 bg-white p-6 text-center shadow-sm">
-                                    <div className="mb-4 text-4xl">✍️</div>
-                                    <h3 className="mb-2 font-semibold text-gray-900">
-                                        Create Posts
-                                    </h3>
-                                    <p className="text-sm text-gray-600">
-                                        Write and publish rich articles with ease.
-                                    </p>
-                                </div>
+<div className="rounded-xl border border-gray-200 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:scale-y-105">
+                                <div className="mb-4 text-4xl">✍️</div>
+                                <h3 className="mb-2 font-semibold text-gray-900">
+                                    Create Posts
+                                </h3>
+                                <p className="text-sm text-gray-600">
+                                    Write and publish rich articles with ease.
+                                </p>
+                            </div>
 
-                                <div className="rounded-xl border border-gray-200 bg-white p-6 text-center shadow-sm">
+                                <div className="rounded-xl border border-gray-200 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:scale-y-105">
                                     <div className="mb-4 text-4xl">📖</div>
                                     <h3 className="mb-2 font-semibold text-gray-900">
                                         Read Stories
@@ -54,7 +54,7 @@ function Home() {
                                     </p>
                                 </div>
 
-                                <div className="rounded-xl border border-gray-200 bg-white p-6 text-center shadow-sm">
+                                <div className="rounded-xl border border-gray-200 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:scale-y-105">
                                     <div className="mb-4 text-4xl">🚀</div>
                                     <h3 className="mb-2 font-semibold text-gray-900">
                                         Share Ideas
@@ -64,7 +64,7 @@ function Home() {
                                     </p>
                                 </div>
 
-                                <div className="rounded-xl border border-gray-200 bg-white p-6 text-center shadow-sm">
+                                <div className="rounded-xl border border-gray-200 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:scale-y-105">
                                     <div className="mb-4 text-4xl">🌍</div>
                                     <h3 className="mb-2 font-semibold text-gray-900">
                                         Connect
