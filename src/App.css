@@ -1,0 +1,121 @@
+/* Typography for rendered post content (used in src/pages/Post.jsx via
+   the .browser-css wrapper around html-react-parser output). */
+.browser-css {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  line-height: 1.75;
+  font-size: 1.0625rem;
+}
+
+.browser-css h1,
+.browser-css h2,
+.browser-css h3,
+.browser-css h4 {
+  font-family: var(--font-display);
+  color: var(--color-canopy);
+  font-weight: 700;
+  margin-top: 1.75em;
+  margin-bottom: 0.6em;
+  letter-spacing: -0.01em;
+}
+
+.browser-css h1 {
+  font-size: 1.85rem;
+}
+.browser-css h2 {
+  font-size: 1.5rem;
+}
+.browser-css h3 {
+  font-size: 1.25rem;
+}
+
+.browser-css p {
+  margin-bottom: 1.1em;
+}
+
+.browser-css a {
+  color: var(--color-leaf-dark);
+  text-decoration: underline;
+  text-decoration-color: var(--color-sprout);
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+.browser-css a:hover {
+  color: var(--color-canopy);
+  text-decoration-color: var(--color-leaf);
+}
+
+.browser-css ul,
+.browser-css ol {
+  margin: 1em 0 1.25em 1.5em;
+}
+.browser-css ul {
+  list-style: disc;
+}
+.browser-css ol {
+  list-style: decimal;
+}
+.browser-css li {
+  margin-bottom: 0.4em;
+}
+
+.browser-css blockquote {
+  border-left: 3px solid var(--color-leaf);
+  background: var(--color-mist);
+  padding: 0.75em 1.25em;
+  margin: 1.5em 0;
+  border-radius: 0.5rem;
+  color: var(--color-ink-soft);
+  font-style: italic;
+}
+
+.browser-css img {
+  border-radius: 0.75rem;
+  margin: 1.5em 0;
+  box-shadow: var(--shadow-soft);
+}
+
+.browser-css code {
+  background: var(--color-mist);
+  color: var(--color-canopy-dark);
+  padding: 0.15em 0.4em;
+  border-radius: 0.35rem;
+  font-size: 0.9em;
+}
+
+.browser-css pre {
+  background: var(--color-canopy-deep);
+  color: var(--color-mist);
+  padding: 1em 1.25em;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+.browser-css pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+.browser-css hr {
+  border: none;
+  border-top: 1px solid var(--color-line);
+  margin: 2em 0;
+}
+
+.browser-css table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+}
+.browser-css th,
+.browser-css td {
+  border: 1px solid var(--color-line);
+  padding: 0.5em 0.75em;
+  text-align: left;
+}
+.browser-css th {
+  background: var(--color-mist);
+  color: var(--color-canopy);
+  font-weight: 600;
+}

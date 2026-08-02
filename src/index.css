@@ -1,0 +1,102 @@
+@import "tailwindcss";
+@import "tailwindcss";
+
+/* ==========================================================================
+   Theme tokens — "Fresh Canopy" palette (colorhunt.co/palette/e8f5e9a5d6a766bb6a1b5e20)
+   Four brand greens, light -> dark, plus a small set of supporting neutrals
+   derived from them so the whole app reads as one uniform system.
+   Because these are declared under --color-*, Tailwind v4 auto-generates
+   utilities: bg-mist, text-canopy, border-leaf, ring-sprout, etc.
+   ========================================================================== */
+@theme {
+  /* brand greens (from the palette, light to dark) */
+  --color-mist: #e8f5e9;      /* palest tint — page surfaces, soft chips */
+  --color-sprout: #a5d6a7;    /* light green — borders, hover fills, dividers */
+  --color-leaf: #66bb6a;      /* mid green — primary actions, links, focus */
+  --color-canopy: #1b5e20;    /* deep green — headers, headings, emphasis */
+
+  /* derived shades, kept in-family for depth & states */
+  --color-leaf-dark: #4e9950;
+  --color-canopy-dark: #123f16;
+  --color-canopy-deep: #0c2b0f;
+
+  /* neutrals tuned warm/green rather than flat gray, so nothing feels bolted-on */
+  --color-paper: #fbfdf9;
+  --color-ink: #122317;
+  --color-ink-soft: #4b5f4f;
+  --color-line: #dcece0;
+
+  /* semantic accent for destructive actions — intentionally outside the green
+     family so delete/danger stays legible against a green UI */
+  --color-danger: #c0392b;
+  --color-danger-dark: #9a2e21;
+
+  /* type */
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* signature tinted shadow instead of default flat gray */
+  --shadow-soft: 0 10px 30px -12px rgb(27 94 32 / 0.28);
+  --shadow-lift: 0 20px 45px -18px rgb(18 63 22 / 0.35);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  color: var(--color-canopy);
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background-color: var(--color-leaf);
+  color: var(--color-paper);
+}
+
+/* focus ring in-theme instead of the browser default blue */
+:focus-visible {
+  outline: 2px solid var(--color-leaf);
+  outline-offset: 2px;
+}
+
+/* slim, in-theme scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sprout) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-sprout);
+  border-radius: 999px;
+  border: 2px solid var(--color-paper);
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-leaf);
+}
