@@ -27,7 +27,7 @@ function Home() {
                 <Container>
                     <div className="flex flex-wrap">
                         <div className="mb-20">
-                            <h1>💻Login Read Posts.</h1>
+                            <h1>💻Login to Read Posts.</h1>
                             <h2 className="mb-10 text-center text-3xl font-bold text-gray-900">
                                 What You Can Do
                             </h2>
