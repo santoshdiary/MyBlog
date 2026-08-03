@@ -5,7 +5,7 @@ import dbservice from '../appwrite/configDb'
 function AllPosts() {
     const [posts, setPosts] = useState([])
 
-    useEffect(() => {
+    useEffect(() => { 
         dbservice.getPosts([]).then((posts) => {
             if (posts) {
                 setPosts(posts.documents)

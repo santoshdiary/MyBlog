@@ -1,27 +1,76 @@
 import React from "react";
-import dbservice from "../appwrite/configDb";
 import { Link } from "react-router-dom";
+import dbservice from "../appwrite/configDb";
 
-function PostCard({$id, title, featuredImage}) {
-    const imageUrl = featuredImage ? dbservice.getFilePreview(featuredImage) : null;
+function PostCard({
+    $id,
+    title,
+    featuredImage,
+    authorName,
+    $createdAt,
+}) {
+    const imageUrl = featuredImage
+        ? dbservice.getFilePreview(featuredImage)
+        : null;
+
+    const publishedDate = new Date($createdAt).toLocaleDateString("en-IN", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+    });
 
     return (
         <Link to={`/post/${$id}`} className="block h-full">
-            <div className='flex h-full flex-col rounded-xl border border-line bg-white p-3 shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-sprout hover:shadow-lift sm:p-4'>
-                <div className='mb-4 flex h-36 items-center justify-center overflow-hidden rounded-xl bg-mist sm:h-48'>
+            <div className="flex h-full flex-col overflow-hidden rounded-xl border border-line bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-sprout hover:shadow-lift">
+
+                {/* Featured Image */}
+                <div className="h-48 overflow-hidden bg-mist">
                     {imageUrl ? (
-                        <img src={imageUrl} alt={title} className='h-full w-full object-cover' />
+                        <img
+                            src={imageUrl}
+                            loading="lazy"
+                            alt={title}
+                            className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                        />
                     ) : (
-                        <div className='flex h-full w-full items-center justify-center text-ink-soft'>
-                            No image available
+                        <div className="flex h-full items-center justify-center text-sm text-ink-soft">
+                            No Image Available
                         </div>
                     )}
                 </div>
-                <h2 className='line-clamp-2 font-display text-lg font-bold text-canopy sm:text-xl'>{title}</h2>
+
+                {/* Card Content */}
+                <div className="flex flex-1 flex-col p-4">
+
+                    {/* Title */}
+                    <h2 className="line-clamp-2 text-lg font-bold leading-snug text-canopy sm:text-xl">
+                        {title}
+                    </h2>
+
+                    {/* Author & Date */}
+                    <div className="mt-3 flex flex-wrap items-center gap-2 text-sm text-ink-soft">
+                        <span className="truncate font-medium">
+                            👤 {authorName || "Unknown Author"}
+                        </span>
+
+                        <span className="hidden sm:inline">•</span>
+
+                        <span className="whitespace-nowrap">
+                            📅 {publishedDate}
+                        </span>
+                    </div>
+
+                    {/* Read More */}
+                    <div className="mt-auto pt-4">
+                        <span className="inline-flex items-center text-sm font-medium text-sprout transition-colors hover:text-canopy">
+                            Read More →
+                        </span>
+                    </div>
+
+                </div>
             </div>
         </Link>
-    )
+    );
 }
 
-
-export default PostCard
+export default PostCard;

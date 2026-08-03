@@ -16,7 +16,7 @@ export class DbService {
         this.bucket = new Storage(this.client)
     }
 
-    async createPost({ title, slug, content, featuredImage, status, userId }) { //slug-> document-id
+    async createPost({ title, slug, content, featuredImage, status, userId, authorName }) { //slug-> document-id
         try {
             return await this.databases.createDocument(
                 conf.appwriteDatabaseId,
@@ -27,7 +27,8 @@ export class DbService {
                     content,
                     featuredImage,
                     status,
-                    userId
+                    userId,
+                    authorName
                 }
             )
         } catch (error) {
@@ -35,7 +36,7 @@ export class DbService {
         }
     }
 
-    async updatePost(slug, { title, content, featuredImage, status, userId }) {
+    async updatePost(slug, { title, content, featuredImage, status, userId, authorName }) {
         try {
             return await this.databases.updateDocument(
                 conf.appwriteDatabaseId,
@@ -48,6 +49,7 @@ export class DbService {
                     featuredImage,
                     status,
                     userId,
+                    authorName,
                 }
             )
         } catch (error) {
@@ -76,14 +78,17 @@ export class DbService {
             return await this.databases.getDocument(
                 conf.appwriteDatabaseId,
                 conf.appCollectionId,
-                slug
+                slug,
+                
             )
         } catch (error) {
             console.log('Apwrite Service:: getCurrentUser::error', error)
         }
     }
 
-    async getPosts(queries = [Query.equal('status', 'active')]) { // getting all posts that are active in state
+    async getPosts(queries = [Query.equal('status', 'active'), 
+            Query.orderDesc("$createdAt")
+        ] ) { // getting all posts that are active in state
         try {
             return await this.databases.listDocuments(
                 conf.appwriteDatabaseId,

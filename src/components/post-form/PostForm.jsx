@@ -14,6 +14,7 @@ export default function PostForm({ post }) {
             slug: post?.$id || "",
             content: post?.content || "",
             status: post?.status || "active",
+            authorName: post?.authorName || "",
         },
     });
 
@@ -83,6 +84,12 @@ export default function PostForm({ post }) {
                     placeholder="Title"
                     className="mb-4"
                     {...register("title", { required: true })}
+                />
+                  <Input
+                    label="Author :"
+                    placeholder="Author"
+                    className="mb-4"
+                    {...register("authorName", { required: true })}
                 />
                 <Input
                     label="Slug :"
