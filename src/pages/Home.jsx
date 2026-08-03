@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from 'react-redux';
 import { Container, PostCard } from '../components'
 import dbservice from "../appwrite/configDb";
+import { Link } from "react-router-dom";
 
 
 function Home() {
@@ -27,22 +28,26 @@ function Home() {
                 <Container>
                     <div className="flex flex-wrap">
                         <div className="mb-20">
-                            <h1>💻Login to Read Posts.</h1>
+
                             <h2 className="mb-10 text-center text-3xl font-bold text-gray-900">
+                                Welcome to MyBlog!
+                            </h2>
+
+                            <h2 className="mb-10 text-center text-2xl font-bold text-gray-900">
                                 What You Can Do
                             </h2>
 
                             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
 
-<div className="rounded-xl border border-gray-200 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:scale-y-105">
-                                <div className="mb-4 text-4xl">✍️</div>
-                                <h3 className="mb-2 font-semibold text-gray-900">
-                                    Create Posts
-                                </h3>
-                                <p className="text-sm text-gray-600">
-                                    Write and publish rich articles with ease.
-                                </p>
-                            </div>
+                                <div className="rounded-xl border border-gray-200 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:scale-y-105">
+                                    <div className="mb-4 text-4xl">✍️</div>
+                                    <h3 className="mb-2 font-semibold text-gray-900">
+                                        Create Posts
+                                    </h3>
+                                    <p className="text-sm text-gray-600">
+                                        Write and publish rich articles with ease.
+                                    </p>
+                                </div>
 
                                 <div className="rounded-xl border border-gray-200 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:scale-y-105">
                                     <div className="mb-4 text-4xl">📖</div>
@@ -75,8 +80,32 @@ function Home() {
                                 </div>
 
                             </div>
+
                         </div>
                     </div>
+                    <div className="rounded-2xl bg-green-600 px-8 py-14 text-center text-white">
+
+                        <h2 className="text-3xl font-bold">
+                            Ready to Share Your Story?
+                        </h2>
+
+                        <p className="mx-auto mt-4 max-w-2xl text-green-100">
+                            Join MyBlog today and start publishing your ideas for the world to
+                            discover.
+                        </p>
+
+                        <Link
+                            to="/signup"
+                            className="mt-8 inline-block rounded-xl bg-white px-8 py-3 font-semibold transition hover:bg-gray-100"
+                            style={{ color: "#1b5e20" }}
+                        >
+                            Get Started
+                        </Link>
+
+
+                    </div>
+
+
                 </Container>
             </div>
         )

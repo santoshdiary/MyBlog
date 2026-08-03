@@ -157,13 +157,13 @@ function Header() {
 
             {/* Mobile Menu */}
 
-            <div
-                className={`overflow-hidden border-t border-white/10 bg-canopy transition-all duration-300 lg:hidden ${
-                    menuOpen
-                        ? "max-h-[500px]"
-                        : "max-h-0"
-                }`}
-            >
+          <div
+    className={`lg:hidden overflow-hidden border-t border-white/10 bg-canopy transition-normal duration-300 ease-out ${
+        menuOpen
+            ? "opacity-100 translate-y-0 max-h-90"
+            : "opacity-0 -translate-y-2 max-h-0"
+    }`}
+>
 
                 <ul className="flex flex-col px-5 py-3">
 

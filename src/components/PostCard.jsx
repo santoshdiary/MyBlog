@@ -27,10 +27,10 @@ function PostCard({
     });
 
     return (
-       <Link
-    to={`/post/${$id}`}
-    className="group block h-full"
->
+        <Link
+            to={`/post/${$id}`}
+            className="group block h-full"
+        >
             <div className="flex h-full flex-col overflow-hidden rounded-xl border border-line bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-sprout hover:shadow-lift">
 
                 {/* Featured Image */}
@@ -59,27 +59,27 @@ function PostCard({
                     </h2>
 
                     {/* Author & Date */}
-                  <div className="mt-3 flex flex-wrap items-center gap-4 text-sm text-ink-soft">
+                    <div className="mt-3 flex flex-wrap items-center gap-4 text-sm text-ink-soft">
 
-    <div className="flex items-center gap-1.5 truncate">
-        <HiOutlineUser className="h-4 w-4 text-sprout" />
-        <span className="font-medium">
-            {authorName || "Unknown Author"}
-        </span>
-    </div>
+                        <div className="flex items-center gap-1.5 truncate">
+                            <HiOutlineUser className="h-4 w-4 text-green-500" />
+                            <span className="font-medium">
+                                {authorName || "Unknown Author"}
+                            </span>
+                        </div>
 
-    <div className="flex items-center gap-1.5 whitespace-nowrap">
-        <HiOutlineCalendarDays className="h-4 w-4 text-sprout" />
-        <span>{publishedDate}</span>
-    </div>
+                        <div className="flex items-center gap-1.5 whitespace-nowrap">
+                            <HiOutlineCalendarDays className="h-4 w-4 text-green-500" />
+                            <span>{publishedDate}</span>
+                        </div>
 
-</div>
+                    </div>
 
                     {/* Read More → */}
-                <span className="inline-flex items-center gap-2 text-sm font-medium text-sprout transition-colors hover:text-canopy">
-    Read More
-    <HiOutlineArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-</span>
+                    <span className="inline-flex items-center gap-2 text-sm font-medium text-green-500 transition-colors hover:text-canopy">
+                        Read More
+                        <HiOutlineArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                    </span>
 
                 </div>
 
