@@ -2,6 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import dbservice from "../appwrite/configDb";
 
+import {
+    HiOutlineUser,
+    HiOutlineCalendarDays,
+    HiOutlineArrowRight,
+    HiOutlinePhoto,
+} from "react-icons/hi2";
+
 function PostCard({
     $id,
     title,
@@ -20,7 +27,10 @@ function PostCard({
     });
 
     return (
-        <Link to={`/post/${$id}`} className="block h-full">
+       <Link
+    to={`/post/${$id}`}
+    className="group block h-full"
+>
             <div className="flex h-full flex-col overflow-hidden rounded-xl border border-line bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-sprout hover:shadow-lift">
 
                 {/* Featured Image */}
@@ -33,8 +43,9 @@ function PostCard({
                             className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
                         />
                     ) : (
-                        <div className="flex h-full items-center justify-center text-sm text-ink-soft">
-                            No Image Available
+                        <div className="flex h-full flex-col items-center justify-center gap-2 text-ink-soft">
+                            <HiOutlinePhoto className="h-10 w-10 text-gray-400" />
+                            <span className="text-sm">No Image Available</span>
                         </div>
                     )}
                 </div>
@@ -48,26 +59,31 @@ function PostCard({
                     </h2>
 
                     {/* Author & Date */}
-                    <div className="mt-3 flex flex-wrap items-center gap-2 text-sm text-ink-soft">
-                        <span className="truncate font-medium">
-                            👤 {authorName || "Unknown Author"}
-                        </span>
+                  <div className="mt-3 flex flex-wrap items-center gap-4 text-sm text-ink-soft">
 
-                        <span className="hidden sm:inline">•</span>
+    <div className="flex items-center gap-1.5 truncate">
+        <HiOutlineUser className="h-4 w-4 text-sprout" />
+        <span className="font-medium">
+            {authorName || "Unknown Author"}
+        </span>
+    </div>
 
-                        <span className="whitespace-nowrap">
-                            📅 {publishedDate}
-                        </span>
-                    </div>
+    <div className="flex items-center gap-1.5 whitespace-nowrap">
+        <HiOutlineCalendarDays className="h-4 w-4 text-sprout" />
+        <span>{publishedDate}</span>
+    </div>
 
-                    {/* Read More */}
-                    <div className="mt-auto pt-4">
-                        <span className="inline-flex items-center text-sm font-medium text-sprout transition-colors hover:text-canopy">
-                            Read More →
-                        </span>
-                    </div>
+</div>
+
+                    {/* Read More → */}
+                <span className="inline-flex items-center gap-2 text-sm font-medium text-sprout transition-colors hover:text-canopy">
+    Read More
+    <HiOutlineArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+</span>
 
                 </div>
+
+
             </div>
         </Link>
     );

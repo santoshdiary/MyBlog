@@ -79,16 +79,16 @@ export class DbService {
                 conf.appwriteDatabaseId,
                 conf.appCollectionId,
                 slug,
-                
+
             )
         } catch (error) {
             console.log('Apwrite Service:: getCurrentUser::error', error)
         }
     }
 
-    async getPosts(queries = [Query.equal('status', 'active'), 
-            Query.orderDesc("$createdAt")
-        ] ) { // getting all posts that are active in state
+    async getPosts(queries = [Query.equal('status', 'active'),
+    Query.orderDesc("$createdAt")
+    ]) { // getting all posts that are active in state
         try {
             return await this.databases.listDocuments(
                 conf.appwriteDatabaseId,
@@ -97,6 +97,21 @@ export class DbService {
             )
         } catch (error) {
             console.log('Apwrite Service:: getCurrentUser::error', error)
+            return false;
+        }
+    }
+    async getMyPosts(userId) {
+        try {
+            return await this.databases.listDocuments(
+                conf.appwriteDatabaseId,
+                conf.appCollectionId,
+                [
+                    Query.equal("userId", [userId]),
+                    Query.orderDesc("$createdAt")
+                ]
+            );
+        } catch (error) {
+            console.log("Appwrite Service :: getMyPosts :: error", error);
             return false;
         }
     }
