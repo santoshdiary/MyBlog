@@ -1,4 +1,4 @@
-import React,{useCallback} from "react";
+import React, { useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { Button, Input, RTE, Select } from ".."; //check it
 import dbservice from "../../appwrite/configDb";
@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 export default function PostForm({ post }) {
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
         defaultValues: {
-            title: post?.title || "",
+            title: post?.title || "", //if post hai,then uska title use karo (for Edit), otherwise "" (for new doc)
             slug: post?.$id || "",
             content: post?.content || "",
             status: post?.status || "active",
@@ -20,11 +20,13 @@ export default function PostForm({ post }) {
 
     const navigate = useNavigate();
     const userData = useSelector((state) => state.auth.userData);
+    
 
     const submit = async (data) => {
+        //ager post hai, that means post update kar rhe ho
         if (post) {
             const file = data.image?.[0] ? await dbservice.uploadFile(data.image[0]) : null;
-
+                        //data. image array ka 0th index (kyki 1 hi image hai)
             if (file) {
                 dbservice.deleteFile(post.featuredImage);
             }
@@ -37,7 +39,9 @@ export default function PostForm({ post }) {
             if (dbPost) {
                 navigate(`/post/${dbPost.$id}`);
             }
-        } else {
+
+        } // new post create kar rhe ho
+        else {
             const file = data.image?.[0] ? await dbservice.uploadFile(data.image[0]) : null;
 
             if (file) {
@@ -85,7 +89,7 @@ export default function PostForm({ post }) {
                     className="mb-4"
                     {...register("title", { required: true })}
                 />
-                  <Input
+                <Input
                     label="Author :"
                     placeholder="Author"
                     className="mb-4"
@@ -100,6 +104,8 @@ export default function PostForm({ post }) {
                         setValue("slug", slugTransform(e.currentTarget.value), { shouldValidate: true });
                     }}
                 />
+
+
                 <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
             </div>
             <div className="w-full px-0 lg:w-1/3 lg:px-2">

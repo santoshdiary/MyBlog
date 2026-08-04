@@ -9,6 +9,9 @@ import {
     HiOutlinePhoto,
 } from "react-icons/hi2";
 
+
+
+
 function PostCard({
     $id,
     title,

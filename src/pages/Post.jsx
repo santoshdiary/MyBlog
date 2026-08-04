@@ -88,11 +88,21 @@ export default function Post() {
                         </div>
                     )}
                 </div>
-
-                <h1 className="mb-6 text-2xl font-bold text-gray-900 sm:mb-8 sm:text-3xl lg:text-4xl">
-                    {post.title}
-                </h1>
-
+                <div>
+                    <h1 className="mb-2 text-2xl font-bold text-gray-900 sm:mb-8 sm:text-3xl lg:text-4xl">
+                        {post.title}
+                    </h1>
+                    <p className="mb-2 text-lg text-gray-600">By {post.authorName}</p>
+                    <p className="mb-6 text-sm text-gray-500">
+                        {post.$createdAt
+                            ? new Date(post.$createdAt).toLocaleDateString("en-IN", {
+                                day: "numeric",
+                                month: "short",
+                                year: "numeric",
+                            })
+                            : "Unknown date"}
+                    </p>
+                </div>
                 <article className="prose prose-base max-w-none sm:prose-lg">
                     {parse(post.content)}
                 </article>
