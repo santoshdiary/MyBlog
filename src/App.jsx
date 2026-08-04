@@ -28,7 +28,7 @@ function App() {
 
   return !loading ? <div className='flex min-h-screen flex-col overflow-x-hidden bg-paper text-ink'>
     <Header/>
-    <main className='flex-1 min-h-screen px-2 py-4 sm:px-4 lg:px-6'>
+    <main className='flex-1 min-h-screen px-2 py-4 pt-20 sm:px-4 sm:pt-24 lg:px-6 lg:pt-28'>
         {/* <Outlet/> */} 
         <Outlet/>
     </main>

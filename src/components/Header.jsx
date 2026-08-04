@@ -67,7 +67,7 @@ function Header() {
     };
 
     return (
-        <header className="sticky top-0 z-50 border-b border-canopy-dark/30 bg-canopy/95 backdrop-blur-md">
+        <header className="fixed left-0 top-0 z-50 w-full border-b border-canopy-dark/30 bg-canopy/95 backdrop-blur-md">
 
             {/* Navbar */}
 
@@ -101,11 +101,10 @@ function Header() {
 
                                 <button
                                     onClick={() => navigate(item.slug)}
-                                    className={`group relative flex items-center gap-2 py-2 text-sm font-medium transition-colors duration-200 ${
-                                        isActive
+                                    className={`group relative flex items-center gap-2 py-2 text-sm font-medium transition-colors duration-200 ${isActive
                                             ? "text-white"
                                             : "text-mist/70 hover:text-white"
-                                    }`}
+                                        }`}
                                 >
 
                                     {/* Icon */}
@@ -119,11 +118,10 @@ function Header() {
                                     {/* Active Underline */}
 
                                     <span
-                                        className={`absolute -bottom-[2px] left-1/2 h-[2.5px] -translate-x-1/2 rounded-full transition-all duration-300 ${
-                                            isActive
+                                        className={`absolute -bottom-[2px] left-1/2 h-[2.5px] -translate-x-1/2 rounded-full transition-all duration-300 ${isActive
                                                 ? "w-8 bg-sprout"
                                                 : "w-0 bg-sprout group-hover:w-5"
-                                        }`}
+                                            }`}
                                     />
 
                                 </button>
@@ -157,13 +155,12 @@ function Header() {
 
             {/* Mobile Menu */}
 
-          <div
-    className={`lg:hidden overflow-hidden border-t border-white/10 bg-canopy transition-normal duration-300 ease-out ${
-        menuOpen
-            ? "opacity-100 translate-y-0 max-h-90"
-            : "opacity-0 -translate-y-2 max-h-0"
-    }`}
->
+            <div
+                className={`lg:hidden overflow-hidden border-t border-white/10 bg-canopy transition-normal duration-300 ease-out ${menuOpen
+                        ? "opacity-100 translate-y-0 max-h-90"
+                        : "opacity-0 -translate-y-2 max-h-0"
+                    }`}
+            >
 
                 <ul className="flex flex-col px-5 py-3">
 
@@ -181,11 +178,10 @@ function Header() {
 
                                 <button
                                     onClick={() => handleNavigate(item.slug)}
-                                    className={`group relative flex w-full items-center gap-3 py-3 text-left text-sm font-medium transition-colors ${
-                                        isActive
+                                    className={`group relative flex w-full items-center gap-3 py-3 text-left text-sm font-medium transition-colors ${isActive
                                             ? "text-white"
                                             : "text-mist/70 hover:text-white"
-                                    }`}
+                                        }`}
                                 >
 
                                     <item.icon className="h-5 w-5" />
@@ -193,11 +189,10 @@ function Header() {
                                     <span>{item.name}</span>
 
                                     <span
-                                        className={`absolute bottom-2 left-0 h-[2px] rounded-full bg-sprout transition-all duration-300 ${
-                                            isActive
+                                        className={`absolute bottom-2 left-0 h-[2px] rounded-full bg-sprout transition-all duration-300 ${isActive
                                                 ? "w-8"
                                                 : "w-0 group-hover:w-5"
-                                        }`}
+                                            }`}
                                     />
 
                                 </button>
