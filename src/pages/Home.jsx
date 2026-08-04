@@ -34,7 +34,7 @@ function Home() {
                             </h2>
 
                             <h2 className="mb-10 text-center text-2xl font-bold text-gray-900">
-                                What You Can Do
+                                What You Can Do?
                             </h2>
 
                             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
