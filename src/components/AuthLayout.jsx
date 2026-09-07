@@ -28,4 +28,4 @@ export default function Protected({children, authentication = true}) {
     }, [authStatus, navigate, authentication])
 
   return loader ? <h1 className="w-full py-10 text-center font-display text-lg text-canopy">Loading...</h1> : <>{children}</>
-}
+} 

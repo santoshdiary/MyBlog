@@ -69,11 +69,11 @@ function Header() {
     return (
         <header className="fixed left-0 top-0 z-50 w-full border-b border-canopy-dark/30 bg-canopy/95 backdrop-blur-md">
 
-            {/* Navbar */}
+        
 
             <nav className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 lg:px-8">
 
-                {/* Logo */}
+               
 
                 <Link
                     to="/"
@@ -83,7 +83,7 @@ function Header() {
                     <Logo width="72px" />
                 </Link>
 
-                {/* Desktop Navigation */}
+               
 
                 <ul className="hidden items-center gap-7 lg:flex">
 
@@ -107,11 +107,11 @@ function Header() {
                                         }`}
                                 >
 
-                                    {/* Icon */}
+                                   
 
                                     <item.icon className="h-5 w-5" />
 
-                                    {/* Text */}
+                               
 
                                     <span>{item.name}</span>
 

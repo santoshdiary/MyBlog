@@ -3,8 +3,8 @@ import { Client, Account, ID } from "appwrite";
 
 
 export class AuthService {
-
-    client = new Client()
+ 
+    client = new Client() 
     account;
     constructor() { // jab object banega tabhi ye client & account initialize ho
 
@@ -49,7 +49,7 @@ export class AuthService {
 
     async logOut() {
         try {
-            await this.account.deleteSessions()
+            await this.account.deleteSessions() // logout froma all browser
             return true
         } catch (e) {
             console.log('Apwrite Service:: logOut::error', e)
@@ -57,5 +57,5 @@ export class AuthService {
         }
     }
 }
-const authService = new AuthService();
+const authService = new AuthService(); //creating object for AuthService class so that futher each method call be called using dot(.) operator
 export default authService;

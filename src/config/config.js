@@ -1,6 +1,6 @@
 
 const conf = {
-    appwriteUrl: String(import.meta.env.VITE_APPWRITE_URL), // import.meta.env.vrabileName --> for accessing variable
+    appwriteUrl: String(import.meta.env.VITE_APPWRITE_URL), // import.meta.env.vrabileName --> for accessing variable from environment variable (.env file)
     appwriteProjectId: String(import.meta.env.VITE_APPWRITE_PROJECT_ID),
     appwriteDatabaseId: String(import.meta.env.VITE_APPWRITE_DATABASE_ID),
     appCollectionId: String(import.meta.env.VITE_APPWRITE_COLLECTION_ID),
